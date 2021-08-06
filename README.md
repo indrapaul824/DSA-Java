@@ -16,8 +16,3 @@
 
 
 ## Author
-
-
-## License
-
-Please see license.txt.
