@@ -1,7 +1,7 @@
 # DSA-Java 
 
 ## Overview
-
+A repo that contains all the source code I made and used while learning DSA using Java
 
 ## Requirement
 
@@ -16,3 +16,5 @@
 
 
 ## Author
+
+Indrashis Paul
