@@ -18,6 +18,7 @@ function findNemo(array: Array<String>) {
         console.log("Running!");
         if (array[i] === "nemo") {
             console.log("Found NEMO!");
+            break;
         }
     }
 }
