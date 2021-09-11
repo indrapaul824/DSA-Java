@@ -15,6 +15,7 @@ var large: Array<String> = new Array(100).fill("nemo");
 
 function findNemo(array: Array<String>) {
     for (let i = 0; i < array.length; i++) {
+        console.log("Running!");
         if (array[i] === "nemo") {
             console.log("Found NEMO!");
         }
