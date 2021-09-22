@@ -1,3 +1,5 @@
+#[derive(Debug)]
+
 pub struct Person {
     name: String,
     age: i32,
@@ -17,5 +19,5 @@ fn main() {
         age: 35,
         children: 4
     };
-    println!("Hello, people, from {}", p.print());
+    println!("Hello, people, from {:?}", p);
 }
