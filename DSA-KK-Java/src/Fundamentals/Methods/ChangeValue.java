@@ -1,11 +1,11 @@
-package Methods;
+package Fundamentals.Methods;
 
 import java.util.Arrays;
 
 public class ChangeValue {
     public static void main(String[] args) {
         // create an array
-        int[] array = {1, 2, 3, 4, 5};
+        int[] array = { 1, 2, 3, 4, 5 };
         // print the array
         System.out.println("Original array: " + Arrays.toString(array));
         // change the value of the array

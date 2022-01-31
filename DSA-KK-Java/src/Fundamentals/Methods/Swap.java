@@ -1,4 +1,4 @@
-package Methods;
+package Fundamentals.Methods;
 
 public class Swap {
     public static void main(String[] args) {

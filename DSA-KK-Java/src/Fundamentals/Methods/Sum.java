@@ -1,4 +1,4 @@
-package Methods;
+package Fundamentals.Methods;
 
 import java.util.Scanner;
 
@@ -34,9 +34,9 @@ public class Sum {
         sum = a + b;
         return sum;
     }
+
     static int sum3(int a, int b) {
         return a + b;
     }
-
 
 }

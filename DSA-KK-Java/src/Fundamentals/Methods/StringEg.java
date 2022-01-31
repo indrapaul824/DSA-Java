@@ -1,4 +1,4 @@
-package Methods;
+package Fundamentals.Methods;
 
 public class StringEg {
     public static void main(String[] args) {
