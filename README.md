@@ -5,6 +5,11 @@ A repo that contains all the source code I made and used while learning DSA usin
 
 ## Requirement
 
+> **Note**
+> This is a note
+
+> **Warning**
+> This is a warning
 
 ## Usage
 
