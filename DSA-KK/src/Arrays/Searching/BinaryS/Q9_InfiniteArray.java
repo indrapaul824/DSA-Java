@@ -5,7 +5,7 @@ package Arrays.Searching.BinaryS;
 public class Q9_InfiniteArray {
     public static void main(String[] args) {
         int[] arr = {-18, -10, -5, 0, 2, 4, 6, 9, 13, 24, 31, 48, 57};
-        int target = 6;
+        int target = 2;
 
         System.out.println("Target is found at: Index " + InfBinarySearch(arr, target));
     }
@@ -14,8 +14,15 @@ public class Q9_InfiniteArray {
         int start = 0, end = 1;
 
         while (target > arr[end]) {
+            int size = end - start;
             start = end;
-            end = end * 2;
+
+            // For exponential increase in Bounding box size
+            // Suitable for Infinite arrays
+            // end = end + (size + 1) * 2;
+
+            // OR simply doubling the result for smaller test cases
+             end = end * 2;
         }
 
         return new int[]{start, end};
