@@ -1,6 +1,7 @@
 package Arrays.Searching.BinaryS;
 
 // Q 9 : Find the position of an element in a sorted array of Infinite Numbers
+// https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/
 
 public class Q9_InfiniteArray {
     public static void main(String[] args) {
@@ -15,7 +16,7 @@ public class Q9_InfiniteArray {
 
         while (target > arr[end]) {
             int size = end - start;
-            start = end;
+            start = end + 1;
 
             // For exponential increase in Bounding box size
             // Suitable for Infinite arrays
