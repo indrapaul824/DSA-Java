@@ -1,5 +1,8 @@
 package Arrays.Searching.BinaryS;
 
+// Q 2 : Count the number of occurrences or frequency of a target element in a sorted array
+// https://www.geeksforgeeks.org/count-number-of-occurrences-or-frequency-in-a-sorted-array/
+
 public class Q2_Frequency {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
