@@ -8,13 +8,11 @@ public class Q4_SearchRotated {
         int[] arr = {4, 6, 9, 13, 24, 31, 48, 57, -18, -10, -5, 0, 2};
         int target = -10;
 
-//        int[] arr = {1, 3};
-//        int target = 3;
-
         System.out.println("Target is found at: Index " + searchRotated(arr, target));
     }
 
     public static int searchRotated(int[] arr, int target) {
+        // Approach 1
         int min = minRotated(arr);
         if (arr[min] == target)
             return min;
@@ -23,7 +21,30 @@ public class Q4_SearchRotated {
         if (pos == -1)
             return binarySearch(arr, target, min, arr.length-1);
         return pos;
+
+        /* Condition checks for Approach 2
+        int pivot = pivotRotated(arr);
+
+        // No pivot found: Array is not rotated
+        if (pivot == -1)
+            // Do normal Binary Search
+            return binarySearch(arr, target, 0, arr.length-1);
+
+        // Pivot is found: Checking conditions for 2 sorted arrays
+        if (arr[pivot] == target)
+            return pivot;
+        else if (arr[0] <= target)
+            return binarySearch(arr, target, 0, pivot-1);
+
+        return binarySearch(arr, target, pivot+1, arr.length-1);
+*/
+
     }
+
+
+    // Approach 1: Using the min element index to bifurcate the array
+    // Here, we include the 1st and Last positions which might contain the min element so the min index
+    // is garunteed to return a value, even when the array is sorted and not rotated
 
     public static int minRotated(int[] arr) {
         int N = arr.length;
@@ -46,6 +67,12 @@ public class Q4_SearchRotated {
         return 0;
     }
 
+
+    // Approach 2: Using the Max/Pivot element index to bifurcate the array
+    // Here, we don't consider the boundary elements, since a Pivot can't exist in the edges of an
+    // array. So, we need to use extra checks since it might return -1 if min element is present in
+    // the edges. It also means that it will only return a pivot only if the array is rotated,
+    // if it's a normal sorted array, -1 will be returned.
     public static int pivotRotated(int[] arr) {
         int start = 0, end = arr.length - 1;
 

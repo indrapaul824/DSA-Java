@@ -2,7 +2,9 @@ package Arrays.Searching.BinaryS;
 
 // Q 3 : Provided a rotated sorted array, count the number of times the original sorted array was
 // rotated to achieve the input array.
-// This is done by finding the index of the minimum element of the input array
+// This is done by finding the index of:
+//      Approach 1: The minimum element of the input array
+//      Approach 2: The maximum/pivot element of the input array
 // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 
 public class Q3_NumRotated {
