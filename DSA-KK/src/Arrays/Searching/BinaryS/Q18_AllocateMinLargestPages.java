@@ -9,6 +9,10 @@ public class Q18_AllocateMinLargestPages {
     }
 
     public static int allocatePages(int[] arr, int k) {
+
+        if ( k > arr.length)
+            return -1;
+
         int start = 0, end = 0;
 
         // start = Max(array)
