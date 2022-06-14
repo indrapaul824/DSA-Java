@@ -14,10 +14,10 @@ public class CyclicSort {
         int n = arr.length;
 
         for (int i=0; i < n; i++) {
-            if (arr[i] != i+1) {
-                int temp = arr[i];
-                arr[i] = arr[arr[i] - 1];
-                arr[arr[i] - 1] = temp;
+            while (arr[i] != i+1) {
+                int temp = arr[arr[i] - 1];
+                arr[arr[i] - 1] = arr[i];
+                arr[i] = temp;
             }
         }
     }
