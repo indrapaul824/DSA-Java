@@ -1,4 +1,4 @@
-package Arrays.Sorting;
+package Arrays.Sorting.Cyclic;
 
 import java.util.Arrays;
 
@@ -12,13 +12,21 @@ public class CyclicSort {
 
     public static void cyclicSort(int[] arr) {
         int n = arr.length;
+        int i = 0;
 
-        for (int i=0; i < n; i++) {
-            while (arr[i] != i+1) {
-                int temp = arr[arr[i] - 1];
-                arr[arr[i] - 1] = arr[i];
-                arr[i] = temp;
-            }
+        while (i < n) {
+            int correct = arr[i] - 1;
+
+            if (arr[i] != arr[correct])
+                swap(arr, i, correct);
+            else
+                i++;
         }
+    }
+
+    public static void swap(int[] arr, int first, int second) {
+        int temp = arr[second];
+        arr[second] = arr[first];
+        arr[first] = temp;
     }
 }
