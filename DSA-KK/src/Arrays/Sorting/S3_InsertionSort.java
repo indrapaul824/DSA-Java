@@ -2,7 +2,7 @@ package Arrays.Sorting;
 
 import java.util.*;
 
-public class InsertionSort {
+public class S3_InsertionSort {
     public static void main(String[] args) {
         int[] arr = {5, 2, 4, 3, 1};
         System.out.println("Original Array: " + Arrays.toString(arr));

@@ -1,4 +1,4 @@
-package Arrays.Sorting.Cyclic;
+package Arrays.Sorting.S4_Cyclic;
 
 import java.util.Arrays;
 
