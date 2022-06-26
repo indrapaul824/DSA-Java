@@ -1,4 +1,4 @@
-package Arrays.Sorting.Cyclic;
+package Arrays.Sorting.S4_Cyclic;
 
 // Amazon Question: Q 3 : Find the only duplicate number in an array with nums ranging from [1, N]
 // https://leetcode.com/problems/find-the-duplicate-number/

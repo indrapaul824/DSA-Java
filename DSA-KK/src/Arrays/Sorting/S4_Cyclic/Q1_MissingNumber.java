@@ -1,4 +1,4 @@
-package Arrays.Sorting.Cyclic;
+package Arrays.Sorting.S4_Cyclic;
 
 // Amazon Question: Q 1 : Find the only missing number in an array of distinct nums in range [0, n]
 // https://leetcode.com/problems/missing-number/

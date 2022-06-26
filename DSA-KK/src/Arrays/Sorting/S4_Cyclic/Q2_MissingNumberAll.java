@@ -1,4 +1,4 @@
-package Arrays.Sorting.Cyclic;
+package Arrays.Sorting.S4_Cyclic;
 
 // Google Question: Q 2 : Find All Numbers Disappeared in an Array of numbers ranging from [1, N]
 // https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/

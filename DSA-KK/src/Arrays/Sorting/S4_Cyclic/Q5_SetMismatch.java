@@ -1,4 +1,4 @@
-package Arrays.Sorting.Cyclic;
+package Arrays.Sorting.S4_Cyclic;
 
 // Q 5 : Find the repeated and the lost number from a set of integers ranging from [1, N]
 // https://leetcode.com/problems/set-mismatch/
