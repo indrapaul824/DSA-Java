@@ -13,7 +13,7 @@ public class Q6_Floor {
     public static int floor(int[] arr, int target) {
 
         // Edge Case: If target < the smallest element in array, no floor
-        if (target < arr[arr.length - 1]) {
+        if (target < arr[0]) {
             return -1;
         }
 
