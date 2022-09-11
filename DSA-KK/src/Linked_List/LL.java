@@ -1,6 +1,6 @@
 package Linked_List;
 
-public class LL {
+public class LL{
 
     private Node head;
     private Node tail;
@@ -9,6 +9,16 @@ public class LL {
 
     public LL() {
         this.size = 0;
+    }
+
+    public void display() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.value + " -> ");
+            temp = temp.next;
+        }
+        System.out.print("NULL");
     }
 
     public void insertFirst(int val) {
