@@ -10,6 +10,10 @@ public class L1_Intro {
         list.insertFirst(8);
         list.insertFirst(4);
 
+        list.insertLast(99);
+
+        list.insert(20, 3);
+
         list.display();
     }
 }
