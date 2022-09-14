@@ -1,8 +1,8 @@
 package Linked_List;
 
-public class L1_Intro {
+public class L1_SinglyDemo {
     public static void main(String[] args) {
-        LL list = new LL();
+        Singly_LL list = new Singly_LL();
 
         list.insertFirst(3);
         list.insertFirst(5);
@@ -13,6 +13,18 @@ public class L1_Intro {
         list.insertLast(99);
 
         list.insert(20, 3);
+
+        list.display();
+
+        System.out.println(list.deleteFirst());
+
+        list.display();
+
+        System.out.println(list.deleteLast());
+
+        list.display();
+
+        System.out.println(list.delete(3));
 
         list.display();
     }
