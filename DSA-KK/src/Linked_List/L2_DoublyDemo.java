@@ -10,9 +10,10 @@ public class L2_DoublyDemo {
         list.insertFirst(8);
         list.insertFirst(4);
 
-//        list.insertLast(99);
-//
-//        list.insert(20, 3);
+        list.insertLast(99);
+        list.insertFirst(3);
+
+        list.insert(20, 3);
 
         list.display();
 

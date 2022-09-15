@@ -46,6 +46,50 @@ public class Doubly_LL {
         size++;
     }
 
+    public void insertLast(int val) {
+        if (head == null) {
+            head = new Node(val);
+            return;
+        }
+        Node node = new Node(val);
+        Node last = head;
+        while (last.next != null) {
+            last = last.next;
+        }
+
+        node.next = null;
+        last.next = node;
+        node.prev = last;
+
+        size++;
+    }
+
+    public void insert(int val, int index) {
+        if (index == 0) {
+            insertFirst(val);
+            return;
+        }
+
+        if (index == size-1) {
+            insertLast(val);
+            return;
+        }
+        Node temp = head;
+        for (int i=0; i<index-1; i++) {
+            temp = temp.next;
+        }
+        Node node = new Node(val);
+
+        node.next = temp.next;
+        if (temp.next != null)
+            temp.next.prev = node;
+
+        node.prev = temp;
+        temp.next = node;
+
+        size++;
+    }
+
     private static class Node {
         private int value;
         private Node next;
