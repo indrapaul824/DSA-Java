@@ -82,10 +82,7 @@ public class Singly_LL {
         size++;
     }
 
-    // Insert using Recursion
-    public void insertRec() {
 
-    }
 
     public int deleteFirst() {
         int deletedElem = head.value;
@@ -131,7 +128,7 @@ public class Singly_LL {
     }
 
     private static class Node {
-        private int value;
+        private final int value;
         private Node next;
 
         public Node (int value) {
