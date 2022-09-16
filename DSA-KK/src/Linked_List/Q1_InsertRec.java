@@ -33,7 +33,7 @@ public class Q1_InsertRec {
         return node;
     }
     private static class Node {
-        private int value;
+        private final int value;
         private Node next;
 
         public Node (int value) {
@@ -60,6 +60,7 @@ public class Q1_InsertRec {
         list.display();
 
         list.insertRec(100, 3);
+        list.insertRec(50, 5);
 
         list.display();
     }
