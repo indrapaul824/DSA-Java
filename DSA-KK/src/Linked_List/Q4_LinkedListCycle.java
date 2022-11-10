@@ -6,6 +6,7 @@ package Linked_List;
 // index of the node that tail's next pointer is connected to.
 // Note that pos is not passed as a parameter.
 // Return true if there is a cycle in the linked list. Otherwise, return false.
+//
 // https://leetcode.com/problems/linked-list-cycle/
 // Amazon & Microsoft
 
@@ -80,7 +81,43 @@ public class Q4_LinkedListCycle {
         return 0;
     }
 
-    // Check if a Cycle exists and find the starting po
+    // Check if a Cycle exists and find the starting point of the Cycle
+    public static ListNode findStartPoint(ListNode head) {
+        int length = 0;
+
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast == slow) {
+                length = findCycleLength(slow);
+                break;
+            }
+        }
+
+        if (length == 0)
+            return null;
+
+        // Find the start node
+        ListNode f = head;
+        ListNode s = head;
+
+        while (length > 0) {
+            s = s.next;
+            length--;
+        }
+
+        // Keep moving both forward and they will meet at the start of the cycle
+        while (f != s) {
+            f = f.next;
+            s = s.next;
+        }
+
+        return s;
+    }
 
     public static void main(String[] args) {
         Q4_LinkedListCycle list = new Q4_LinkedListCycle();
