@@ -27,9 +27,9 @@ public class S5_Operators {
         System.out.println("Indra" + new ArrayList<>(3));
         System.out.println("Indra" + new Integer(40));
 
-        // + operator works with:
-        //      1. Between all primitives
-        //      2. Between any object/primitive and at least 1 String
+        // + operator works between:
+        //      1. All primitives
+        //      2. Any object/primitive and at least 1 String
         // System.out.println(new Integer(40) + new ArrayList<>()); ==> NOT Possible
         System.out.println(new Integer(40) + "" + new ArrayList<>());
 
