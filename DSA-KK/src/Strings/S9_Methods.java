@@ -2,7 +2,7 @@ package Strings;
 
 import java.util.Arrays;
 
-public class S8_Methods {
+public class S9_Methods {
     public static void main(String[] args) {
         String name = "Indrashis Paul";
 
