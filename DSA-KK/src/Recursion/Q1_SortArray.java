@@ -26,7 +26,6 @@ public class Q1_SortArray {
             return;
 
         int temp = arr.get(arr.size()-1);
-
         arr.remove(arr.size()-1);
 
         sortArray(arr);
@@ -41,7 +40,6 @@ public class Q1_SortArray {
         }
 
         int val = arr.get(arr.size()-1);
-
         arr.remove(arr.size()-1);
 
         insertValue(arr, value);
