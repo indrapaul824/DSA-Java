@@ -29,6 +29,7 @@ public class Q6_MidLL {
         temp.next = new ListNode(val, null);
     }
 
+    // https://leetcode.com/problems/middle-of-the-linked-list/
     public int midElement(ListNode head) {
         ListNode s = head;
         ListNode f = head;
@@ -44,6 +45,8 @@ public class Q6_MidLL {
         return -1;
     }
 
+
+    // https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/
     public void deleteMiddle(ListNode head) {
 
         if (head == null || head.next == null)
