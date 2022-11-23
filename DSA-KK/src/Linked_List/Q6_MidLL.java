@@ -44,11 +44,25 @@ public class Q6_MidLL {
         return -1;
     }
 
+    public void deleteMiddle(ListNode head) {
+
+        if (head == null || head.next == null)
+            return;
+
+        ListNode f = head;
+        ListNode s = head;
+
+        while (f.next.next != null && f.next.next.next != null) {
+            f = f.next.next;
+            s = s.next;
+        }
+
+        s.next = s.next.next;
+    }
+
     public static class ListNode {
         int val;
         ListNode next;
-
-        ListNode() {}
 
         ListNode(int val) {
             this.val = val;
@@ -72,5 +86,10 @@ public class Q6_MidLL {
         list.display();
 
         System.out.println("The middle element is: " + list.midElement(list.head));
+
+        list.deleteMiddle(list.head);
+
+        System.out.println("The list after the Mid element is deleted: ");
+        list.display();
     }
 }
