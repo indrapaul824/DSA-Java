@@ -1,4 +1,4 @@
-package Stacks_Queues;
+package Stacks_Queues.Implementation;
 
 public class CircularQueue {
     protected int[] data;
