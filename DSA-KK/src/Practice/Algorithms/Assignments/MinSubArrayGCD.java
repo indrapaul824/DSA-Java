@@ -9,7 +9,7 @@ public class MinSubArrayGCD {
         return gcd(b, a % b);
     }
 
-    static int findGCD(int[] arr, int n) {
+    static int findGCD(int[] arr) {
         int res = arr[0];
         for (int i : arr) {
             res = gcd(res, i);
@@ -27,7 +27,7 @@ public class MinSubArrayGCD {
             int[] temp = new int[m];
             while (i < n-m) {
                 System.arraycopy(arr, i, temp, 0, m);
-                if (findGCD(temp, m) == g)
+                if (findGCD(temp) == g)
                     return m;
                 i++;
             }
