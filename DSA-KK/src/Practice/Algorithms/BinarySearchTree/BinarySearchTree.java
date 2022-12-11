@@ -1,4 +1,4 @@
-package Algorithms.BinarySearchTree;
+package Practice.Algorithms.BinarySearchTree;
 
 import java.util.Scanner;
 
