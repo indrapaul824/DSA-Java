@@ -42,9 +42,9 @@ public class CheckRegEx {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the String:");
-        String s = in.nextLine(); // ttteeaab
+        String s = in.nextLine(); // ttteeaattb
         System.out.println("Enter the RegExp:");
-        String r = in.nextLine(); // t+e+a+b
+        String r = in.nextLine(); // t+e+a+t+b
 
         System.out.println(repeatedChar(s));
         System.out.println(checkRepeatedChar(s, r));
