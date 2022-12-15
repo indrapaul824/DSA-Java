@@ -2,34 +2,41 @@ package Recursion;
 
 public class R1_Intro {
     public static void main(String[] args) {
+        // Calls the print function which has a base condition
+        print();
+        // This recursion stack will complete once count == 3 and will not overload Stack Memory
+
         // Call function time only
         message();
-        // Print the message 5 times without updating the function and a single function call
-        // This chain of function calls is called a recursion
+
+        // This specific function will return the following Exception:
+        // Exception in thread "main" java.lang.StackOverflowError
+        //	at java.base/sun.nio.cs.UTF_8$Encoder.encodeLoop(UTF_8.java:564)
+        //	at java.base/java.nio.charset.CharsetEncoder.encode(CharsetEncoder.java:585)
+        //	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:301)
+        //	at java.base/sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:290)
+        //	at java.base/sun.nio.cs.StreamEncoder.write(StreamEncoder.java:131)
+        //	at java.base/java.io.OutputStreamWriter.write(OutputStreamWriter.java:205)
+        //	at java.base/java.io.BufferedWriter.flushBuffer(BufferedWriter.java:120)
+        //	at java.base/java.io.PrintStream.writeln(PrintStream.java:722)
+        //	at java.base/java.io.PrintStream.println(PrintStream.java:938)
+        //	at Recursion.R1_Intro.message(R1_Intro.java:12)
+        //	at Recursion.R1_Intro.message(R1_Intro.java:13)
+        //	at Recursion.R1_Intro.message(R1_Intro.java:13)
+        //	at Recursion.R1_Intro.message(R1_Intro.java:13)
     }
 
-    // Functions that prints "Hello World"
     static void message() {
-        System.out.println("Hello World!");
-        message1();
+        System.out.println(1);
+        message();
     }
 
-    static void message1() {
-        System.out.println("Hello World!");
-        message2();
-    }
-
-    static void message2() {
-        System.out.println("Hello World!");
-        message3();
-    }
-
-    static void message3() {
-        System.out.println("Hello World!");
-        message4();
-    }
-
-    static void message4() {
-        System.out.println("Hello World!");
+    static int count = 0;
+    static void print() {
+        if (count == 3)
+            return;
+        System.out.println(count);
+        count++;
+        print();
     }
 }
