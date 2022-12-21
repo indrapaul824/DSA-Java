@@ -66,24 +66,7 @@ public class PrimeNum {
             System.out.println("Since the difference is same, both of the above values are nearest to " + n);
     }
 
-    public static void printPrimeSeries(int n) {
-        boolean[] prime = new boolean[n + 1];
+    public static void simpleSieve(int n) {
 
-        Arrays.fill(prime, true);
-
-        prime[0] = false;
-        prime[1] = false;
-
-        for (int i = 2; i * i <= n; i++) {
-            if (prime[i]) {
-                for (int j = i*i; j <= n; j += i)
-                    prime[j] = false;
-            }
-        }
-
-        for (int i = 2; i <= n; i++) {
-            if (prime[i])
-                System.out.print(i + " ");
-        }
     }
 }
