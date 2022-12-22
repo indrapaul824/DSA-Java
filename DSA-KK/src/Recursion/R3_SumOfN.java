@@ -1,8 +1,12 @@
 package Recursion;
 
+import java.util.Scanner;
+
 public class R3_SumOfN {
     public static void main(String[] args) {
-
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        sum(n, 0);
     }
 
     // Parameterized Way
@@ -12,6 +16,6 @@ public class R3_SumOfN {
             return;
         }
 
-        sum(i - 1, sum + 1);
+        sum(i - 1, sum + i);
     }
 }
