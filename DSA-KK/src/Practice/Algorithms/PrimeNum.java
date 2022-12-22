@@ -16,7 +16,8 @@ public class PrimeNum {
 
         System.out.print("Enter the limit: ");
         n = in.nextInt();
-        printPrimeSeries(n);
+        simpleSieve(n);
+        primeSieve(n);
     }
 
     // Brute-Force Solution
@@ -67,6 +68,44 @@ public class PrimeNum {
     }
 
     public static void simpleSieve(int n) {
+        boolean[] prime = new boolean[n + 1];
 
+        Arrays.fill(prime, true);
+
+        prime[0] = false;
+        prime[1] = false;
+
+        for (int i = 2; i * i <= n; i++) {
+            if (prime[i]) {
+                for (int j = i*i; j <= n; j += i)
+                    prime[j] = false;
+            }
+        }
+
+        for (int i = 2; i <= n; i++) {
+            if (prime[i])
+                System.out.print(i + " ");
+        }
+    }
+
+    public static void primeSieve(int n) {
+        boolean[] prime = new boolean[n+1];
+        if (n >= 2)
+            prime[2] = true;
+
+        for (int i = 3; i <= n; i += 2)
+            prime[i] = true;
+
+        for (int i = 3; i * i <= n; i++) {
+            if (prime[i]) {
+                for (int j = i*i; j <= n; j += i)
+                    prime[j] = false;
+            }
+        }
+
+        for (int i = 2; i <= n; i++) {
+            if (prime[i])
+                System.out.print(i + " ");
+        }
     }
 }
