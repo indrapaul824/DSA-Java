@@ -1,8 +1,10 @@
+package utils;
+
 import java.util.*;
 import java.io.*;
 
 public class Main{
-    static class FastReader{
+    public static class FastReader{
         BufferedReader br;
         StringTokenizer st;
         public FastReader(){
@@ -18,16 +20,16 @@ public class Main{
             }
             return st.nextToken();
         }
-        int nextInt(){
+        public int nextInt(){
             return Integer.parseInt(next());
         }
-        long nextLong(){
+        public long nextLong(){
             return Long.parseLong(next());
         }
-        double nextDouble(){
+        public double nextDouble(){
             return Double.parseDouble(next());
         }
-        String nextLine(){
+        public String nextLine(){
             String str="";
             try {
                 str=br.readLine().trim();
@@ -37,7 +39,7 @@ public class Main{
             return str;
         }
     }
-    static class FastWriter {
+    public static class FastWriter {
         private final BufferedWriter bw;
 
         public FastWriter() {
