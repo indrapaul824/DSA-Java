@@ -1,10 +1,12 @@
 package Practice.Algorithms;
 
 import java.util.Scanner;
+import utils.Main.*;
 
 public class BinaryPalin {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        FastReader in = new FastReader();
+        FastWriter out = new FastWriter();
         System.out.print("Enter the number: ");
         int n = in.nextInt();
 
