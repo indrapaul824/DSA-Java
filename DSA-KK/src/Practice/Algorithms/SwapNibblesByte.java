@@ -65,4 +65,12 @@ public class SwapNibblesByte {
 
         return (right | left);
     }
+
+    // Using Hexadecimal format of 15
+    public static int swapNibblesBits2(int n) {
+        int right = (n & 0x0F) << 4;
+        int left = (n & 0xF0) >> 4;
+
+        return (right | left);
+    }
 }
