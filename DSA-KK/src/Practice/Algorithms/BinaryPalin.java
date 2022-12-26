@@ -11,8 +11,8 @@ public class BinaryPalin {
         int n = in.nextInt();
 
         System.out.println("Binary Equivalent: " + convertBinary(n));
-
-        System.out.println("Is it Palindrome? " + checkPalinBM(n));
+        System.out.println("Palindrome? " + checkPalin(n));
+        System.out.println("Palindrome? " + checkPalinBM(n));
     }
 
     public static String convertBinary(int n) {
@@ -33,16 +33,19 @@ public class BinaryPalin {
             rev = rev * 10 + r;
             binary /= 10;
         }
-
+        System.out.println(rev);
         return b == rev;
     }
 
     public static boolean checkPalinBM(int n) {
-        int a = 0X0F, b = 0XF0;
-        int rev = (n & a) << 4;
-        rev = rev | ((n & b) >> 4);
+        int temp = n, rev = 0;
 
+        while(temp > 0) {
+            rev = rev << 1;
+            if ((temp & 1) == 1)
+                rev = rev ^ 1;
+            temp = temp >> 1;
+        }
         return rev == n;
     }
-
 }
