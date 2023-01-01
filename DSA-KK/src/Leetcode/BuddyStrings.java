@@ -1,4 +1,4 @@
-package LeetcodeContests;
+package Leetcode;
 
 import utils.Main.*;
 
