@@ -7,6 +7,7 @@ public class R3_SumOfN {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         sum(n, 0);
+        System.out.println(sum(n));
     }
 
     // Parameterized Way
@@ -17,5 +18,13 @@ public class R3_SumOfN {
         }
 
         sum(i - 1, sum + i);
+    }
+
+    // Functional Way
+    static int sum(int n) {
+        if (n == 0)
+            return 0;
+
+        return n + sum(n-1);
     }
 }
