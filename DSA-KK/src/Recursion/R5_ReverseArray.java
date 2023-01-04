@@ -15,6 +15,8 @@ public class R5_ReverseArray {
         System.out.println(Arrays.toString(arr));
         reverse(arr, 0, n-1);
         System.out.println(Arrays.toString(arr));
+        reverse(arr, 0);
+        System.out.println(Arrays.toString(arr));
     }
 
     // Using 2 pointers - left and right
@@ -26,6 +28,14 @@ public class R5_ReverseArray {
     }
 
     // Using 1 pointer
+    static void reverse(int[] arr, int n) {
+        if (n >= arr.length/2)
+            return;
+
+        swap(arr, n, arr.length - n - 1);
+        reverse(arr, n + 1);
+    }
+
     static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
