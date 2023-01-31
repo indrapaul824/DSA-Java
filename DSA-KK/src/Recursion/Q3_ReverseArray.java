@@ -4,7 +4,7 @@ import utils.Main.*;
 
 import java.util.Arrays;
 
-public class R5_ReverseArray {
+public class Q3_ReverseArray {
     public static void main(String[] args) {
         FastReader in = new FastReader();
         int n = in.nextInt();

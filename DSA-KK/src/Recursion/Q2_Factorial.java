@@ -1,7 +1,7 @@
 package Recursion;
 import utils.Main.*;
 
-public class R4_Factorial {
+public class Q2_Factorial {
     public static void main(String[] args) {
         FastReader in = new FastReader();
         int n = in.nextInt();

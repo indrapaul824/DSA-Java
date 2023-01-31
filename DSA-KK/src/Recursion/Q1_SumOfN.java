@@ -2,7 +2,7 @@ package Recursion;
 
 import java.util.Scanner;
 
-public class R3_SumOfN {
+public class Q1_SumOfN {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();

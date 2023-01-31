@@ -1,7 +1,7 @@
 package Recursion;
 
 import utils.Main.*;
-public class R6_PalindromeCheck {
+public class Q4_PalindromeCheck {
     public static void main(String[] args) {
         FastReader in = new FastReader();
         String s = in.nextLine();
