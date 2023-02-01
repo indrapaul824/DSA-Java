@@ -1,9 +1,7 @@
 package Recursion;
 
 import utils.Main.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Q8_CombSum_I {
     public static void main(String[] args) {
@@ -18,6 +16,7 @@ public class Q8_CombSum_I {
     }
 
     private static List<List<Integer>> combSum(int[] arr, int target) {
+        Arrays.sort(arr);
         List<List<Integer>> res = new ArrayList<>();
         findCombs(0, arr, target, res, new ArrayList<>());
         return res;
