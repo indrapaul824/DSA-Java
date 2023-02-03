@@ -15,6 +15,7 @@ public class D1_Intro {
         System.out.println(fibo_mem(n, dp));
         System.out.println(fibo_tab(n));
         System.out.println(fibo_so(n));
+        System.out.println(fibo_sol(n));
     }
 
     // Recursive Way
