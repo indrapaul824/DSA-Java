@@ -16,7 +16,7 @@ public class Q3_FrogJumpKSteps {
         System.out.println(minEnergy_tab(arr, n, k));
     }
 
-    // Recursive Approach
+    // Recursive Way
     private static int minEnergy(int[] arr, int n, int k) {
         return frogJump(arr, n-1, k);
     }
