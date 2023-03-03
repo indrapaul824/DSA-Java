@@ -1,4 +1,4 @@
-package Dynamic_Programming.OneDim;
+package Dynamic_Programming.D1_OneDim;
 
 import static java.lang.Math.*;
 import utils.Main.*;

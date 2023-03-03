@@ -1,4 +1,4 @@
-package Dynamic_Programming.Subsequences;
+package Dynamic_Programming.D3_Subsequences;
 
 import utils.Main.*;
 import java.util.*;
