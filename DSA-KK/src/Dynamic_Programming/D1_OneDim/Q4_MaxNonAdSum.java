@@ -38,6 +38,7 @@ public class Q4_MaxNonAdSum {
         return maxSumSub(arr, n-1, dp);
     }
     private static int maxSumSub(int[] arr, int ind, int[] dp) {
+
         if (ind == 0)
             return arr[ind];
         if (ind < 0)
