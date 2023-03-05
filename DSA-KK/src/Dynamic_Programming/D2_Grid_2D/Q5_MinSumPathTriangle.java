@@ -1,5 +1,7 @@
 package Dynamic_Programming.D2_Grid_2D;
 
+// https://leetcode.com/problems/triangle/
+
 import java.util.*;
 
 public class Q5_MinSumPathTriangle {
@@ -50,5 +52,22 @@ public class Q5_MinSumPathTriangle {
             }
         }
         return dp[0][0];
+    }
+
+    public int minimumTotal_so(List<List<Integer>> triangle) {
+        int n = triangle.size();
+        int[] dp = new int[n];
+        for (int j = 0; j < n; j++)
+            dp[j] = triangle.get(n-1).get(j);
+        for (int i = n-2; i >= 0; i--) {
+            int[] curr = new int[n];
+            for (int j = i; j >= 0; j--) {
+                int d = triangle.get(i).get(j) + dp[j];
+                int dg = triangle.get(i).get(j) + dp[j+1];
+                curr[j] = Math.min(d, dg);
+            }
+            dp = curr;
+        }
+        return dp[0];
     }
 }
