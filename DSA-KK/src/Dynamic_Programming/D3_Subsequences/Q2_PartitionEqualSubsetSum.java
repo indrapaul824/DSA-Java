@@ -1,21 +1,22 @@
 package Dynamic_Programming.D3_Subsequences;
 
 // https://leetcode.com/problems/partition-equal-subset-sum/
+// https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1
 // https://practice.geeksforgeeks.org/problems/minimum-sum-partition3317/1
 import java.util.*;
 
 public class Q2_PartitionEqualSubsetSum {
 
-    // Using DP on Subsequences
-    // Submits successfully on GFG because there, the problem consists of an array with non-negative values only.
-    // This solution doesn't work on Leetcode because there, the problem consists of negative integers too
-    // and with target = -ve, dp[-ve] is impossible to construct
-    public static int minimumDifference(int[] arr) {
-        int N = arr.length;
+    // Using the space optimized Subset Sum solution with target = Total Sum/2
+    public boolean canPartition(int[] nums) {
         int sum = 0;
-        for (int n : arr)
+        for (int n : nums)
             sum += n;
-
+        if (sum%2 != 0)
+            return false;
+        return solve(nums.length, nums, sum/2);
+    }
+    public static Boolean solve(int N, int[] arr, int sum) {
         boolean[] dp = new boolean[sum+1];
         dp[0] = true;
         if(arr[0] <= sum)
@@ -32,11 +33,6 @@ public class Q2_PartitionEqualSubsetSum {
             }
             dp = curr;
         }
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i <= sum; i++) {
-            if (dp[i])
-                min = Math.min(min, Math.abs(i - (sum - i)));
-        }
-        return min;
+        return dp[sum];
     }
 }
