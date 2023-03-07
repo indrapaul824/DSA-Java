@@ -110,15 +110,24 @@ public class Q7_CoinChange {
     }
 
 
+    // GFG Solution - Greedy
+    // Start from the largest denomination
+    // If curr denomination is > Target Sum --> Move to next denom
+    // If not --> Add it to coins --> Reduce the Target Sum --> Don't move to next denom
     static List<Integer> minPartition(int N) {
         int[] den = { 1, 2, 5, 10, 20, 50, 100, 200, 500, 2000 };
-        int n = den.length;
+        int n = den.length - 1;
         List<Integer> coins = new ArrayList<>();
-        coinsChange(den, n-1, N, coins);
+
+        while (n >= 0) {
+            if (den[n] > N)
+                n--;
+            else {
+                coins.add(den[n]);
+                N -= den[n];
+            }
+        }
+
         return coins;
-    }
-
-    private static void coinsChange(int[] den, int i, int T, List<Integer> coins) {
-
     }
 }
