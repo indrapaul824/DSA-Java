@@ -1,5 +1,8 @@
 package Recursion;
 
+// https://leetcode.com/problems/permutation-sequence
+// https://practice.geeksforgeeks.org/problems/find-kth-permutation/1
+
 public class Q17_KthPermutation {
     public String getPermutation(int n, int k) {
         StringBuilder s = new StringBuilder();
