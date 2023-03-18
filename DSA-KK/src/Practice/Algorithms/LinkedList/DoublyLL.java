@@ -1,4 +1,4 @@
-package Algorithms.LinkedList;
+package Practice.Algorithms.LinkedList;
 
 public class DoublyLL {
 
