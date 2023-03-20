@@ -13,7 +13,7 @@ public class SingleNumber {
             arr[i] = in.nextInt();
         }
         System.out.println("Unique Element: " + unique(arr, n));
-        System.out.println("Unique Element: " + unique_map(arr, n));
+        System.out.println("Unique Element: " + unique_map(arr));
     }
 
     // For all valid test cases
@@ -26,7 +26,7 @@ public class SingleNumber {
     }
 
     // For invalid test cases
-    static int unique_map(int[] arr, int n) {
+    static int unique_map(int[] arr) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i : arr)
             map.put(i, map.getOrDefault(i, 0) + 1);
