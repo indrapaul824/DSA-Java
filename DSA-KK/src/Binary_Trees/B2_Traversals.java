@@ -95,18 +95,26 @@ public class B2_Traversals {
     public static <T extends Comparable<?>> void postOrder_it2(Node<T> node) {
         if (node == null)
             return;
-
-        Stack<Node<T>> st1 = new Stack<>();
-
-        st1.push(node);
-
-        while (!st1.isEmpty()) {
-            Node<T> temp = st1.pop();
-            if (temp.left != null)
-                st1.push(temp.left);
-            if (temp.right != null)
-                st1.push(temp.right);
-
+        Stack<Node<T>> st = new Stack<>();
+        Node<T> curr = node;
+        while (curr != null || !st.isEmpty()) {
+            if (curr != null) {
+                st.push(curr);
+                curr = curr.left;
+            }
+            else {
+                Node<T> temp = st.peek().right;
+                if (temp == null) {
+                    temp = st.pop();
+                    System.out.print(temp.data + " -> ");
+                    while (!st.isEmpty() && temp == st.peek().right) {
+                        temp = st.pop();
+                        System.out.print(temp.data + " -> ");
+                    }
+                }
+                else
+                    curr = temp;
+            }
         }
     }
 
@@ -132,6 +140,55 @@ public class B2_Traversals {
         }
 
         return wrapList;
+    }
+
+    static class Pair {
+        Node node;
+        int num;
+        <T extends Comparable<?>> Pair(Node<T> node, int num) {
+            this.num = num;
+            this.node = node;
+        }
+    }
+    public static <T extends Comparable<?>> List<List<T>> multiOrder(Node<T> node) {
+        Stack<Pair> st = new Stack<>();
+        st.push(new Pair(node, 1));
+        List<T> pre = new ArrayList<>();
+        List<T> in = new ArrayList<>();
+        List<T> post = new ArrayList<>();
+        List<List<T>> list = new ArrayList<>();
+
+        if (node == null)
+            return list;
+
+        while (!st.isEmpty()) {
+            Pair it = st.pop();
+
+            if (it.num == 1) {
+                pre.add((T) it.node.data);
+                it.num++;
+                st.push(it);
+                if (it.node.left != null)
+                    st.push(new Pair(it.node.left, 1));
+            }
+
+            else if (it.num == 2){
+                in.add((T) it.node.data);
+                it.num++;
+                st.push(it);
+                if (it.node.right != null)
+                    st.push(new Pair(it.node.right, 1));
+            }
+
+            else
+                post.add((T) it.node.data);
+        }
+
+        list.add(pre);
+        list.add(in);
+        list.add(post);
+
+        return list;
     }
 
 
@@ -258,10 +315,10 @@ public class B2_Traversals {
         System.out.println("\nIterative In-Order Traversal:");
         inOrder_it(root);
 
-        System.out.println("\nIterative Post-Order Traversal:");
+        System.out.println("\nIterative Post-Order 1 Traversal:");
         postOrder_it1(root);
 
-        System.out.println("\nIterative Post-Order Traversal:");
+        System.out.println("\nIterative Post-Order 2 Traversal:");
         postOrder_it2(root);
     }
 }
