@@ -20,6 +20,20 @@ public class B2_Traversals {
         preOrder(node.left);
         preOrder(node.right);
     }
+    public static <T extends Comparable<?>> void preOrder_it(Node<T> node) {
+        if (node == null)
+            return;
+        Stack<Node<T>> st = new Stack<>();
+        st.push(node);
+        while (!st.isEmpty()) {
+            Node<T> top = st.pop();
+            System.out.print(top.data + " -> ");
+            if (top.right != null)
+                st.push(top.right);
+            if (top.left != null)
+                st.push(top.left);
+        }
+    }
 
     public static <T extends Comparable<?>> void inOrder(Node<T> node) {
         if (node == null)
@@ -28,6 +42,25 @@ public class B2_Traversals {
         inOrder(node.left);
         System.out.print(node.data + " -> ");
         inOrder(node.right);
+    }
+    public static <T extends Comparable<?>> void inOrder_it(Node<T> root) {
+        if (root == null)
+            return;
+        Stack<Node<T>> st = new Stack<>();
+        Node<T> node = root;
+        while (true) {
+            if (node != null) {
+                st.push(node);
+                node = node.left;
+            }
+            else {
+                if (st.isEmpty())
+                    break;
+                node = st.pop();
+                System.out.print(node.data + " -> ");
+                node = node.right;
+            }
+        }
     }
 
     public static <T extends Comparable<?>> void postOrder(Node<T> node) {
@@ -38,10 +71,48 @@ public class B2_Traversals {
         postOrder(node.right);
         System.out.print(node.data + " -> ");
     }
+    public static <T extends Comparable<?>> void postOrder_it1(Node<T> node) {
+        if (node == null)
+            return;
+
+        Stack<Node<T>> st1 = new Stack<>();
+        Stack<Node<T>> st2 = new Stack<>();
+
+        st1.push(node);
+
+        while (!st1.isEmpty()) {
+            Node<T> temp = st1.pop();
+            if (temp.left != null)
+                st1.push(temp.left);
+            if (temp.right != null)
+                st1.push(temp.right);
+            st2.push(temp);
+        }
+        while (!st2.isEmpty())
+            System.out.print(st2.pop().data + " -> ");
+    }
+
+    public static <T extends Comparable<?>> void postOrder_it2(Node<T> node) {
+        if (node == null)
+            return;
+
+        Stack<Node<T>> st1 = new Stack<>();
+
+        st1.push(node);
+
+        while (!st1.isEmpty()) {
+            Node<T> temp = st1.pop();
+            if (temp.left != null)
+                st1.push(temp.left);
+            if (temp.right != null)
+                st1.push(temp.right);
+
+        }
+    }
 
     public static <T extends Comparable<?>> List<List<T>> levelOrder(Node<T> node) {
         Queue<Node<T>> queue = new ArrayDeque<>();
-        List<List<T>> wrapList = new LinkedList<List<T>>();
+        List<List<T>> wrapList = new LinkedList<>();
         if (node == null)
             return wrapList;
         queue.offer(node);
@@ -63,45 +134,6 @@ public class B2_Traversals {
         return wrapList;
     }
 
-    public static <T extends Comparable<?>> List<List<T>> levelOrderSpiral(Node<T> node) {
-        Deque<Node<T>> queue = new ArrayDeque<>();
-        List<List<T>> wrapList = new LinkedList<List<T>>();
-        if (node == null)
-            return wrapList;
-        queue.offer(node);
-        int lv = 0;
-        while (!queue.isEmpty()) {
-            lv++;
-            int levelNum = queue.size();
-            List<T> subList = new LinkedList<>();
-
-            for (int i = 0; i < levelNum; i++) {
-                if (lv % 2 != 0) {
-                    assert queue.peekFirst() != null;
-                    if (queue.peekFirst().left != null)
-                        queue.offer(queue.peekFirst().left);
-                    assert queue.peekFirst() != null;
-                    if (queue.peekFirst().right != null)
-                        queue.offer(queue.peekFirst().right);
-                    subList.add(Objects.requireNonNull(queue.pollFirst()).data);
-                }
-
-                else {
-                    assert queue.peekLast() != null;
-                    if (queue.peekLast().left != null)
-                        queue.offer(queue.peekLast().left);
-                    assert queue.peekLast() != null;
-                    if (queue.peekLast().right != null)
-                        queue.offer(queue.peekLast().right);
-                    subList.add(Objects.requireNonNull(queue.pollLast()).data);
-                }
-
-            }
-            wrapList.add(subList);
-        }
-
-        return wrapList;
-    }
 
     static class BTreePrinter {
 
@@ -220,10 +252,16 @@ public class B2_Traversals {
             System.out.print(list + " -> ");
         }
 
-        System.out.println("\nLevel-Order Spiral Traversal:");
-        List<List<Integer>> levelOrderSpiral = levelOrderSpiral(root);
-        for (List<Integer> list : levelOrderSpiral) {
-            System.out.print(list + " -> ");
-        }
+        System.out.println("\nIterative Pre-Order Traversal:");
+        preOrder_it(root);
+
+        System.out.println("\nIterative In-Order Traversal:");
+        inOrder_it(root);
+
+        System.out.println("\nIterative Post-Order Traversal:");
+        postOrder_it1(root);
+
+        System.out.println("\nIterative Post-Order Traversal:");
+        postOrder_it2(root);
     }
 }
