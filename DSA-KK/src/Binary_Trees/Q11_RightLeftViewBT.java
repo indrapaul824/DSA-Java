@@ -14,6 +14,7 @@ public class Q11_RightLeftViewBT {
         }
     }
 
+    // Right View
     public List<Integer> rightSideView(Node root) {
         List<Integer> list = new ArrayList<>();
         revPreOrder(root, 0, list);
@@ -29,5 +30,23 @@ public class Q11_RightLeftViewBT {
 
         revPreOrder(node.right, level+1, list);
         revPreOrder(node.left, level+1, list);
+    }
+
+    // Left View
+    public List<Integer> leftSideView(Node root) {
+        List<Integer> list = new ArrayList<>();
+        PreOrder(root, 0, list);
+        return list;
+    }
+
+    private void PreOrder(Node node, int level, List<Integer> list) {
+        if (node == null)
+            return;
+
+        if (level == list.size())
+            list.add(node.data);
+
+        PreOrder(node.left, level+1, list);
+        PreOrder(node.right, level+1, list);
     }
 }
