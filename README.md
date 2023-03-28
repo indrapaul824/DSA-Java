@@ -3,7 +3,7 @@
 ## Overview
 A repo that contains all the source code I made and used while learning DSA using Java.
 
-## Requirement
+<!-- ## Requirement 
 
 > **Note**
 > This is a note
@@ -23,3 +23,4 @@ A repo that contains all the source code I made and used while learning DSA usin
 ## Author
 
 Indrashis Paul
+-->
