@@ -2,7 +2,7 @@ package Dynamic_Programming.D6_LIS;
 
 import java.util.Arrays;
 
-public class Q1_LIS {
+public class Q1_LongestIncreasingSubsequence {
 
     // Recursion
     public int lengthOfLIS(int[] nums) {
