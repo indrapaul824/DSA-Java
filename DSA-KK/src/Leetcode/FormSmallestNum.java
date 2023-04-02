@@ -19,6 +19,11 @@ public class FormSmallestNum {
         int min = Math.min(nums1[0], nums2[0]);
         int max = Math.max(nums1[0], nums2[0]);
 
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i : nums1)
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        for (int k : map.keySet())
+
         return min*10 + max;
     }
 }
