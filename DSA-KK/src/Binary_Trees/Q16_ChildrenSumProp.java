@@ -1,6 +1,8 @@
 package Binary_Trees;
 import java.util.*;
 
+// https://practice.geeksforgeeks.org/problems/children-sum-parent/1
+
 public class Q16_ChildrenSumProp {
     static class Node<T extends Comparable<?>> {
         Node<T> left, right;
