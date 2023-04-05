@@ -167,6 +167,26 @@ public class Q16_ChildrenSumProp {
             node.data = tot;
     }
 
+    //Function to check whether all nodes of a tree have the value equal to the sum of their child nodes.
+    public static int isSumProperty(Node<Integer> node)
+    {
+        if (node == null || (node.left == null && node.right == null))
+            return 1;
+
+        int left = 0, right = 0;
+
+        if (node.left != null)
+            left = node.left.data;
+        if (node.right != null)
+            right = node.right.data;
+
+        if ((node.data == left + right) && isSumProperty(node.left) == 1 && isSumProperty(node.right) == 1)
+            return 1;
+        else
+            return 0;
+
+    }
+
     public static void main(String[] args) {
         Node<Integer> root = new Node<>(50);
         root.left = new Node<>(7);
