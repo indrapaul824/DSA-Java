@@ -2,6 +2,8 @@ package Leetcode;
 import java.util.*;
 
 public class LargestColourValue {
+
+    // Using Kahn's Algo - Topological Sort
     public int largestPathValue(String colors, int[][] edges) {
         int n = colors.length();
         Map<Integer, List<Integer>> adj = new HashMap<>();
@@ -81,6 +83,8 @@ public class LargestColourValue {
         return count[node][colors.charAt(node) - 'a'];
     }
 
+
+    // Using DFS
     public int largestPathValue_dfs(String colors, int[][] edges) {
         int n = colors.length();
         Map<Integer, List<Integer>> adj = new HashMap<>();
