@@ -8,7 +8,6 @@ public class SimplifyPath {
         String[] p = path.split("/");
 
         for (String s : p) {
-            System.out.println(s);
             if (!st.isEmpty() && s.equals(".."))
                 st.pop();
             else if (!s.equals("") && !s.equals(".") && !s.equals(".."))
