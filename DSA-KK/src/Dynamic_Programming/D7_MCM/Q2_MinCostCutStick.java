@@ -1,7 +1,7 @@
 package Dynamic_Programming.D7_MCM;
 import java.util.*;
 
-public class Q2_MinCOstCUtStick {
+public class Q2_MinCostCutStick {
 
     // Recursive Approach
     public int minCost(int n, int[] cuts) {
