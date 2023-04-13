@@ -60,5 +60,31 @@ public class Q2_MinCOstCUtStick {
     }
 
     // DP-2: Tabulation
+    public int minCost_tab(int n, int[] cuts) {
+        List<Integer> list = new ArrayList<>(Arrays.stream(cuts).boxed().toList());
+        list.add(0, 0);
+        list.add(n);
+        Collections.sort(list);
+        int m = cuts.length;
+        int[][] dp = new int[m+2][m+2];
 
+        for (int i = m; i >= 1; i--) {
+            for (int j = 1; j <= m; j++) {
+                // Base Case
+                if (i > j) continue;
+
+                // Recurrence
+                int min = Integer.MAX_VALUE;
+                for (int ind = i; ind <= j; ind++) {
+                    int cost = list.get(j+1) - list.get(i-1)
+                            + dp[i][ind-1] + dp[ind+1][j];
+                    min = Math.min(min, cost);
+                }
+
+                dp[i][j] = min;
+            }
+        }
+
+        return dp[1][m];
+    }
 }
