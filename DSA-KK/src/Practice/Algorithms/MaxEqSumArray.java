@@ -1,7 +1,6 @@
 package Practice.Algorithms;
 
 import utils.Main.*;
-
 import java.util.stream.IntStream;
 
 public class MaxEqSumArray {
@@ -16,15 +15,16 @@ public class MaxEqSumArray {
     }
 
     private static int findMaxEqSum(int[] arr, int n) {
-        int sum = IntStream.of(arr).sum();
-        int p_sum = 0, res = Integer.MIN_VALUE;
+        int right_sum = IntStream.of(arr).sum();
+        int left_sum = 0, res = Integer.MIN_VALUE;
 
         for (int i = 0; i < n; i++) {
-            p_sum += arr[i];
+            right_sum -= arr[i];
 
-            if (p_sum == sum)
-                res = Math.max(res, p_sum);
-            sum -= arr[i];
+            if (left_sum == right_sum)
+                res = Math.max(res, left_sum);
+            left_sum += arr[i];
+
         }
 
         return res;
