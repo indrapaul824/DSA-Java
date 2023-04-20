@@ -1,7 +1,7 @@
 # DSA-Complete 
 
 ## Overview
-A repo that contains all the source code I made and used while learning DSA using Java.
+A collection of numerous source codes of different concepts and questions related to Data Structures and Algorithms.
 
 - Learning Now:
   1. Dynamic Programming [Squares].
