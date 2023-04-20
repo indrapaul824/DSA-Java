@@ -3,9 +3,10 @@
 ## Overview
 A collection of numerous source codes of different concepts and questions related to Data Structures and Algorithms.
 
-- Learning Now:
-  1. Dynamic Programming [Squares].
-  2. Binary Search Trees
+Topics:
+-[x] Arrays and related
+-[x] Binary Search
+-[x] Stacks and Queues
 
 <!-- ## Requirement 
 
