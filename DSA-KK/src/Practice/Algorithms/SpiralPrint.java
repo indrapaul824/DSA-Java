@@ -19,9 +19,9 @@ public class SpiralPrint {
         System.out.println("The matrix is: ");
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
-                System.out.print(String.format("%10s", arr[i][j]));
+                System.out.printf("%10s", arr[i][j]);
             }
-            System.out.println("");
+            System.out.println();
         }
 
         System.out.println("\nThe spiral traversal of the matrix is: ");
