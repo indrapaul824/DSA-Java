@@ -10,7 +10,7 @@ public class Main{
         public FastReader(){
             br=new BufferedReader(new InputStreamReader(System.in));
         }
-        String next(){
+        public String next(){
             while(st==null || !st.hasMoreTokens()){
                 try {
                     st=new StringTokenizer(br.readLine());
