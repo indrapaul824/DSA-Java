@@ -1,10 +1,5 @@
-package Algorithms.LinkedList;
-
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-
+package Practice.Algorithms.LinkedList;
+import utils.Main.*;
 public class ArrangeEvenOdd {
 
     private int size;
@@ -86,7 +81,7 @@ public class ArrangeEvenOdd {
     }
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        FastReader in = new FastReader();
         System.out.println("Enter the LinkedList elements: ");
         int n = in.nextInt();
         ArrangeEvenOdd list = new ArrangeEvenOdd();
