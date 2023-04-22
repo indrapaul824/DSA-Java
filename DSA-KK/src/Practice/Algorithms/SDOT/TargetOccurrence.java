@@ -1,4 +1,4 @@
 package Practice.Algorithms.SDOT;
 
-public class TargetOccurence {
+public class TargetOccurrence {
 }
