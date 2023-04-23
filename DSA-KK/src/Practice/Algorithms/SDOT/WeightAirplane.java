@@ -10,7 +10,8 @@ public class WeightAirplane {
             arr[i] = in.nextInt();
         }
 
-        System.out.println("Total Amount: " + weightMachine(arr, n, t));
+        System.out.println("Case 1 --> Total Amount: " + weightMachine(arr, n, t));
+        System.out.println("Case 2 --> Total Amount: " + weightMachine_II(arr, n, t));
     }
 
     private static int weightMachine(int[] arr, int n, int t) {
