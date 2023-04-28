@@ -3,6 +3,8 @@ package Stacks_Queues;
 import java.util.*;
 
 public class Q7_MaxAreaRectHistogram {
+
+    // Two-pass Solution
     public static class Pair {
         int height;
         int index;
@@ -41,6 +43,8 @@ public class Q7_MaxAreaRectHistogram {
         }
         return max;
     }
+
+    // Optimal: One Pass Solution
 
     public static void main(String[] args) {
         int[] h = {6,2,5,4,5,1,6};
