@@ -4,7 +4,20 @@ import java.util.*;
 
 public class Q7_MaxAreaRectHistogram {
 
-    // Two-pass Solution
+    // Brute-Force - O(N^2)
+    static int largestarea(int[] arr, int n) {
+        int maxArea = 0;
+        for (int i = 0; i < n; i++) {
+            int minHeight = Integer.MAX_VALUE;
+            for (int j = i; j < n; j++) {
+                minHeight = Math.min(minHeight, arr[j]);
+                maxArea = Math.max(maxArea, minHeight * (j - i + 1));
+            }
+        }
+        return maxArea;
+    }
+
+    // Two-pass Solution - O(N)
     public static class Pair {
         int height;
         int index;
