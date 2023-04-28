@@ -58,9 +58,39 @@ public class Q7_MaxAreaRectHistogram {
     }
 
     // Optimal: One Pass Solution
+    public static class PairO {
+        long height;
+        long index;
+
+        public PairO(long height, long index) {
+            this.height = height;
+            this.index = index;
+        }
+    }
+    public static long getMaxArea(long[] hist, long n) {
+        Deque<PairO> st = new ArrayDeque<>();
+        long max = Long.MIN_VALUE;
+
+        for (int i = 0; i <= n; i++) {
+            while(!st.isEmpty() && (i == n || st.peek().height >= hist[i])) {
+                long height = st.pop().height;
+                long width;
+                if (st.isEmpty())
+                    width = i;
+                else
+                    width = i - st.peek().index - 1;
+                max = Math.max(max, width*height);
+            }
+            st.push(new PairO((i == n) ? -1 :  hist[i], i));
+        }
+
+        return max;
+    }
 
     public static void main(String[] args) {
         int[] h = {6,2,5,4,5,1,6};
         System.out.println(largestRectangleArea(h));
+        long[] hist = {6,2,5,4,5,1,6};
+        System.out.println(getMaxArea(hist, hist.length));
     }
 }
