@@ -7,6 +7,8 @@ Topics:
 -[x] Arrays and related
 -[x] Binary Search
 -[x] Stacks and Queues
+-[x] Linked List
+-[x] Binary Trees 
 
 <!-- ## Requirement 
 
