@@ -13,8 +13,10 @@ public class G2_BFS {
         vis[0] = true;
         q.offer(0);
 
+        // Traverse
         while (!q.isEmpty()) {
             int curr = q.poll();
+            bfs.add(curr);
 
             for (int i : adj.get(curr)) {
                 if (!vis[i]) {
@@ -22,8 +24,6 @@ public class G2_BFS {
                     q.offer(i);
                 }
             }
-
-            bfs.add(curr);
         }
 
         return bfs;
