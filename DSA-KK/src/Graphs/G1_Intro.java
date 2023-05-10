@@ -6,8 +6,19 @@ import java.util.Arrays;
 import java.util.List;
 
 public class G1_Intro {
+    static class Pair {
+        int node, wt;
+
+        public Pair(int node, int wt) {
+            this.node = node;
+            this.wt = wt;
+        }
+    }
+
     public static void main(String[] args) {
         FastReader in = new FastReader();
+
+        // Undirected Graphs
 
         // Declare the No. of Nodes and Edges
         System.out.println("Enter the No. of nodes and edges:");
@@ -49,7 +60,7 @@ public class G1_Intro {
             adjList.add(new ArrayList<>());
         }
 
-        System.out.println("Enter the edges / node pairs:");
+        System.out.println("\nEnter the edges / node pairs:");
         for (int i = 0; i < m; i++) {
             int a = in.nextInt(), b = in.nextInt();
             adjList.get(a).add(b);
@@ -58,6 +69,52 @@ public class G1_Intro {
 
         System.out.println("Adjacency List Representation:");
         for (List<Integer> row : adjList)
+            System.out.println(row);
+
+
+        // Undirected Weighted Graphs
+
+        // Declare the No. of Nodes and Edges
+        System.out.println("Enter the No. of nodes and edges:");
+        n = in.nextInt();
+        m = in.nextInt();
+
+        // Adjacency Matrix Representation
+        int[][] adjWt = new int[n+1][n+1];
+
+        System.out.println("Enter the edges / node pairs:");
+        for (int i = 0; i < m; i++) {
+            int a = in.nextInt(), b = in.nextInt(), wt = in.nextInt();
+            adjWt[a][b] = wt;
+            adjWt[b][a] = wt;
+        }
+
+        System.out.println("Adjacency Matrix Representation:");
+        for (int[] row : adjWt)
+            System.out.println(Arrays.toString(row));
+
+
+        // Declare the No. of Nodes and Edges
+        System.out.println("Enter the No. of nodes and edges:");
+        n = in.nextInt();
+        m = in.nextInt();
+
+        // Adjacency List Representation
+        List<List<Pair>> adjWtList = new ArrayList<>();
+
+        for (int i = 0; i <= n; i++) {
+            adjWtList.add(new ArrayList<>());
+        }
+
+        System.out.println("\nEnter the edges / node pairs:");
+        for (int i = 0; i < m; i++) {
+            int a = in.nextInt(), b = in.nextInt(), wt = in.nextInt();
+            adjWtList.get(a).add(new Pair(b, wt));
+            adjWtList.get(b).add(new Pair(a, wt));
+        }
+
+        System.out.println("Adjacency List Representation:");
+        for (List<Pair> row : adjWtList)
             System.out.println(row);
     }
 }
