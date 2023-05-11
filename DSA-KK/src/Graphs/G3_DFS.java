@@ -6,6 +6,7 @@ public class G3_DFS {
         vis[node] = true;
         res.add(node);
 
+        // Traverse all its neighbours
         for (int i : adj.get(node)) {
             if (!vis[i])
                 dfs(i, vis, res, adj);
