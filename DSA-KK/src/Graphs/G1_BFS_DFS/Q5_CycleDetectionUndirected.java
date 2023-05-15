@@ -45,4 +45,36 @@ public class Q5_CycleDetectionUndirected {
 
         return false;
     }
+
+    // DFS
+
+    boolean dfs(int src, int parent, ArrayList<ArrayList<Integer>> adj, boolean[] vis) {
+        vis[src] = true;
+
+        for (int adjNode : adj.get(src)) {
+            if (!vis[adjNode]) {
+                if (dfs(adjNode, src, adj, vis))
+                    return true;
+            }
+
+            else if (adjNode != parent)
+                return true;
+        }
+
+        return false;
+    }
+
+    // Function to detect cycle in an undirected graph.
+    public boolean isCycle_dfs(int V, ArrayList<ArrayList<Integer>> adj) {
+        boolean[] vis = new boolean[V];
+
+        for (int i = 0; i < V; i++) {
+            if (!vis[i]) {
+                if (dfs(i, -1, adj, vis))
+                    return true;
+            }
+        }
+
+        return false;
+    }
 }
