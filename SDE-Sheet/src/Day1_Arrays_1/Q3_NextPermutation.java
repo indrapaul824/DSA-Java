@@ -29,7 +29,7 @@ public class Q3_NextPermutation {
             return;
         }
 
-        // 2. Find smallest element greater than arr[ind]
+        // 2. Find the smallest element greater than arr[ind]
         for (int i = n-1; i >= 0; i--) {
             if (nums[i] > nums[ind]) {
                 swap(nums, i, ind);
