@@ -1,4 +1,4 @@
-package Day1_Arrays_1;
+package Day1_Arrays_I;
 import java.util.*;
 
 public class Q2_PascalsTriangle {

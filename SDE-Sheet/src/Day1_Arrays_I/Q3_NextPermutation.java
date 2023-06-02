@@ -1,4 +1,4 @@
-package Day1_Arrays_1;
+package Day1_Arrays_I;
 
 public class Q3_NextPermutation {
     private void swap(int[] arr, int i, int j) {

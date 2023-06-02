@@ -1,4 +1,4 @@
-package Day1_Arrays_1;
+package Day1_Arrays_I;
 
 public class Q6_StockBuySell {
     public int maxProfit(int[] prices) {

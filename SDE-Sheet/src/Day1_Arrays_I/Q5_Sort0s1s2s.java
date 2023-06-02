@@ -1,4 +1,4 @@
-package Day1_Arrays_1;
+package Day1_Arrays_I;
 
 
 public class Q5_Sort0s1s2s {
