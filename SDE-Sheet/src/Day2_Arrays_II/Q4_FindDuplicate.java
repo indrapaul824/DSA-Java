@@ -1,7 +1,7 @@
 package Day2_Arrays_II;
 
 public class Q4_FindDuplicate {
-    // Optimal
+    // Optimal - No modification + constant extra space
     public int findDuplicate_optimal(int[] nums) {
         int slow = nums[0], fast = nums[0];
 
