@@ -42,9 +42,7 @@ public class Q5_RepeatingMissingNumber {
 
         // Find difference bit position (bit == 1)
         int bitNo = 0;
-        while (true) {
-            if ((xr & (1 << bitNo)) != 0)
-                break;
+        while ((xr & (1 << bitNo)) == 0) {
             bitNo++;
         }
 
@@ -71,8 +69,8 @@ public class Q5_RepeatingMissingNumber {
 
         // Count zero in array: if cnt == 2 -> zero is repeating else -> zero is missing
         int cnt = 0;
-        for (int i = 0; i < n; i++)
-            if (A.get(i) == zero) cnt++;
+        for (Integer integer : A)
+            if (integer == zero) cnt++;
 
         ArrayList<Integer> ans = new ArrayList<>();
 
