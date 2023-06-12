@@ -6,7 +6,7 @@ public class Q4_FindDuplicate {
         int slow = nums[0], fast = nums[0];
 
         // Find the 1st intersection
-        // Using do-while loop since we already have slow and fast at the same point initially and we need to find the next intersection
+        // Using do-while loop since we already have slow and fast at the same point initially, and we need to find the next intersection
         do {
             slow = nums[slow];
             fast = nums[nums[fast]];
