@@ -2,6 +2,7 @@ package Day2_Arrays_II;
 import java.util.*;
 
 public class Q3_MergeTwoSortedArrays {
+    // GFG Solution:
     // Optimal - 1
     private static void swap(long[] arr1, long[] arr2, int i, int j) {
         long temp = arr1[i];
@@ -67,6 +68,25 @@ public class Q3_MergeTwoSortedArrays {
             if (gap == 1)
                 break;
             gap = (gap / 2) + (gap % 2);
+        }
+    }
+
+    // Leetcode Solution:
+    // Brute Force
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        if (n >= 0) System.arraycopy(nums2, 0, nums1, m, n);
+        Arrays.sort(nums1);
+    }
+
+    // Optimal: Two-Pointer Approach
+    public void merge_opti(int[] nums1, int m, int[] nums2, int n) {
+        int left = m - 1, right = n - 1, ind = m + n - 1;
+
+        while (right >= 0) {
+            if (left >= 0 && nums1[left] > nums2[right])
+                nums1[ind--] = nums1[left--];
+            else
+                nums1[ind--] = nums2[right--];
         }
 
     }
