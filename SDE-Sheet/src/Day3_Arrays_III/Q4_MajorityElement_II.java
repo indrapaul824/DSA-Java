@@ -16,7 +16,7 @@ public class Q4_MajorityElement_II {
         return res;
     }
 
-    // Optimal
+    // Optimal: Modified Moore's Voting Algo
     public List<Integer> majorityElement_opti(int[] nums) {
         List<Integer> res = new ArrayList<>();
 
