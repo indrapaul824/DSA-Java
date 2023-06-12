@@ -25,7 +25,7 @@ public class Q3_MajorityElement {
             if (ele == n)
                 cnt++;
             else
-                cnt = 0;
+                cnt--;
         }
 
         return ele;
