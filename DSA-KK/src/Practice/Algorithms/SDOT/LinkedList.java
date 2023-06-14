@@ -17,6 +17,27 @@ public class LinkedList {
         }
     }
 
+    public Node get(int index) {
+        Node node = head;
+
+        for (int i=0; i < index; i++)
+            node = node.next;
+
+        return node;
+    }
+
+    public Node find(int value) {
+        Node node = head;
+
+        while (node != null) {
+            if (node.data == value)
+                return node;
+            node = node.next;
+        }
+
+        return null;
+    }
+
     private void insertAtHead(int data) {
         head = new Node(data, head);
         size++;
@@ -52,13 +73,45 @@ public class LinkedList {
         }
     }
 
+    private int deleteAtStart() {
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
+    }
+
+    private int deleteAtEnd() {
+        if (size <= 1)
+            deleteAtStart();
+
+        Node secLast = get(size-2);
+        int val = secLast.data;
+        secLast.next = null;
+        size--;
+        return val;
+    }
+
+    private int delete(int pos) {
+        if (size <= 1 || pos == 0)
+            deleteAtStart();
+        if (pos == size-1)
+            deleteAtEnd();
+
+        Node prev = get(pos - 1);
+        int val = prev.next.data;
+
+        prev.next = prev.next.next;
+        size--;
+        return val;
+    }
+
     private void display() {
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-        System.out.print("NULL");
+        System.out.println("NULL");
     }
 
     public static void main(String[] args) {
@@ -73,6 +126,12 @@ public class LinkedList {
 
         list.insert(4, 0);
         list.insert(100, 4);
+
+        list.display();
+
+        System.out.println(list.deleteAtStart());
+        System.out.println(list.deleteAtEnd());
+        System.out.println(list.delete(3));
 
         list.display();
     }
