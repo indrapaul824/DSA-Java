@@ -1,18 +1,25 @@
-package Algorithms.Stack;
+package Practice.Algorithms.Stack;
 
 import java.util.Scanner;
 
 public class Stack {
-    private final int MAX = 1000;
+    private int MAX = 1000;
     private int top;
-    private int[] arr = new int[MAX];
+    private final int[] arr;
 
     Stack() {
         top = -1;
+        arr = new int[MAX];
+    }
+
+    Stack(int size) {
+        top = -1;
+        this.MAX = size;
+        arr = new int[size];
     }
 
     boolean isEmpty() {
-        return top<0;
+        return top < 0;
     }
 
     void push(int n) {
