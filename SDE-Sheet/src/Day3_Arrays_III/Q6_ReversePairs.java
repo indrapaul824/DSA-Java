@@ -4,7 +4,7 @@ public class Q6_ReversePairs {
     // Optimal
     int[] temp;
     private void merge(int[] arr, int s, int mid, int e) {
-        int r1 = s, r2 = mid+1, j = mid + 1, w = s;
+        int r1 = s, r2 = mid+1, w = s;
 
         while (r1 <= mid || r2 <= e) {
             if (r1 > mid) // r1 is exhausted
