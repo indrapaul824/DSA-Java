@@ -17,13 +17,8 @@ public class Q2_Powx_n {
         return ans;
     }
     public double myPow(double x, int n) {
-        long N = (long) n;
         if (n < 0)
-            N = -1 * N;
-
-        if (n < 0)
-            return (double)1 / pow(x, N);
-
-        return pow(x, N);
+            return 1.0 / pow(x, -1 * (long)n);
+        return pow(x, (long)n);
     }
 }
