@@ -15,16 +15,16 @@ public class Q1_ReverseLL {
     public ListNode reverseList(ListNode head) {
         if (head == null)
             return head;
-        ListNode newHead = null;
+        ListNode prev = null, curr = head;
 
-        while (head != null) {
-            ListNode next = head.next;
-            head.next = newHead;
-            newHead = head;
-            head = next;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
 
-        return newHead;
+        return prev;
     }
 
     // Recursive
