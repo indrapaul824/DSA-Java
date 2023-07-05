@@ -10,4 +10,10 @@ public class Q6_DeleteGivenNodeLL {
             this.val = val;
         }
     }
+
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+        System.gc();
+    }
 }
