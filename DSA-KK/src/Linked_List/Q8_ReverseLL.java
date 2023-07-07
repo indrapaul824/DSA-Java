@@ -81,18 +81,17 @@ public class Q8_ReverseLL {
 
         // Now, curr -> left, last -> node before left
         // Reverse the connections from left to right
-        ListNode prev = null, next = curr.next;
+        ListNode prev = null;
 
         // In this case: 1 -> 2 -> 3 -> 4 -> 5 -> NULL ,    left = 2, right = 4
         // We will start from 2 and keep reversing the connections for 3 and then 4
         // A total of 3 times ==> until left[2,3,4] <= right
         while (curr != null && left++ <= right) {
+            ListNode next = curr.next;
             curr.next = prev;
 
             prev = curr;
             curr = next;
-            if (curr != null)
-                next = curr.next;
         }
 
         // Make the new connections with the left and right nodes
