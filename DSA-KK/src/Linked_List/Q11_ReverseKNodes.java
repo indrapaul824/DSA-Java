@@ -63,7 +63,6 @@ public class Q11_ReverseKNodes {
         if (k <= 1 || head == null)
             return head;
 
-        // Skip the first left-1 nodes
         ListNode curr = head;
         ListNode prev = null;
 
