@@ -64,36 +64,45 @@ public class Q8_ReverseLL {
     }
 
     public ListNode reverseBetween(ListNode head, int left, int right) {
-        if (left == right)
+        if (head == null || left == right)
             return head;
 
-        // Skip the 1st left - 1 nodes
-        ListNode prev = null, pres = head;
+        // Why dummy? -> If left == 1 -> Then the head of the LL will get reversed, So we need a pointer to the head in this case
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode last = dummy, curr = head;
 
-        for (int i = 0; head != null && i < left - 1; i++) {
-            prev = pres;
-            pres = pres.next;
+        // Skip the 1st [left - 1] nodes -> Reach node position at left
+        for (int i = 0; i < left-1; i++) {
+            last = curr;
+            curr = curr.next;
         }
 
-        ListNode last = prev, newEnd = pres;
+        // Now, curr -> left, last -> node before left
+        // Reverse the connections from left to right
+        ListNode prev = null, next = curr.next;
 
-        // Reverse between left and right
-        ListNode next = pres.next;
-        for (int i = 0; pres != null && i < right-left+1; i++) {
-            pres.next = prev;
-            prev = pres;
-            pres = next;
-            if (next != null)
-                next = next.next;
+        // In this case: 1 -> 2 -> 3 -> 4 -> 5 -> NULL ,    left = 2, right = 4
+        // We will start from 2 and keep reversing the connections for 3 and then 4
+        // A total of 3 times ==> until left[2,3,4] <= right
+        while (curr != null && left++ <= right) {
+            curr.next = prev;
+
+            prev = curr;
+            curr = next;
+            if (curr != null)
+                next = curr.next;
         }
 
-        if (last != null)
-            last.next = prev;
-        else
-            head = prev;
+        // Make the new connections with the left and right nodes
+        // After reversing, 2 -> NULL 3 -> 2 and 4 -> 3
+        // 1    NULL <- 2 <- 3 <- 4     5
+        // Connect 1 -> 4 and 2 -> 5
+        // Now, prev -> right[4], curr -> node after right[5]
+        last.next.next = curr;
+        last.next = prev;
 
-        newEnd.next = pres;
-        return head;
+        return dummy.next;
     }
 
     public static class ListNode {
