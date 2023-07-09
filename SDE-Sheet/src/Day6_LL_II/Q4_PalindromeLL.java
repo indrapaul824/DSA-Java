@@ -1,5 +1,7 @@
 package Day6_LL_II;
 
+// https://leetcode.com/problems/palindrome-linked-list/solutions/1137027/js-python-java-c-easy-floyd-s-reversal-solution-w-explanation/
+
 public class Q4_PalindromeLL {
     public static class ListNode {
         int val;
